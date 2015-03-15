@@ -1,0 +1,5 @@
+15/03/15
+-Decide on minigame to include using HTML5
+-Decide on javascript to include
+-Set up contact page
+-Set up projects page

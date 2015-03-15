@@ -1,0 +1,7 @@
+15/03/15
+-Init LOG
+-Init TODO
+-Init index.html
+-Init styles.css
+-Init git
+-Started setting up styles
