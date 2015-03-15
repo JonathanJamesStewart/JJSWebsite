@@ -1,3 +1,10 @@
+15/03/15.1
+-Init projects.html
+-Add more contact info
+-Update projects
+-Add nav bars to top and bottom
+-Registered jonathanstewart.net
+
 15/03/15
 -Init LOG
 -Init TODO

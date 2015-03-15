@@ -6,22 +6,59 @@ body {
     background-color:#FDFDF7; 
     color:#387181;
     text-align:center;
+	height:100%
 }
 
 #header{
     font-size:200%;
     padding:10px;
     margin:10px;
-    border-bottom:1px solid #387181;
 }
 
 #footer{
-    border-top:1px solid #387181;
+	position:absolute;
+	width:100%;
+	bottom:0;
+}
+
+#navigation{
     margin:10px;
     padding:10px;
 }
 
+#content{
+	margin:10px;
+	padding:10px;
+}
+
 a{
     color:#387181;
+	text-decoration:none;
     padding:5px;
+}
+
+a:hover{
+	color:black;
+}
+
+ul{
+	list-style: none;
+	text-align:center;
+	padding:0;
+	margin:0;
+}
+
+hr{
+	width: 100%;
+	size:1px;
+	border-color:#387181;
+}
+
+img{
+	padding:1px;
+}
+
+img:hover{
+	padding:0;
+	border:1px solid #387181;
 }
