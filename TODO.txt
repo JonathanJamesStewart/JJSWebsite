@@ -1,3 +1,7 @@
+15/03/15.2
+-Create TicTacToe in javascript
+-Create snake game in html5
+
 15/03/15.1
 -Decide on minigame to include using HTML5
 -Decide on javascript to include
