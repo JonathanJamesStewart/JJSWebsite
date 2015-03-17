@@ -1,3 +1,9 @@
+15/03/16
+-Set up board beyond just toggling pictures.
+	Now does not change picture back if clicked again.
+-Good progress on implementing TicTacToe.js Still no AI.
+-Reset board button and function.
+
 15/03/15.2
 -Created TicTacToe page
 -Got TicTacToe.js working-ish.

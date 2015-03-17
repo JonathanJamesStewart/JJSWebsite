@@ -18,21 +18,24 @@
 			<hr />
 			
 			<div id="content">
+				
+				<button onclick="reset()">Reset</button>
+				
 				<table align="center">
 					<tr>
-						<td><input type="image" id="UL" src="Images/Blank.jpg" onclick="foo()"/></td>
-						<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="UM" src="Images/Blank.jpg" /></td>
-						<td><input type="image" id="UR" src="Images/Blank.jpg" /></td>
+						<td><input type="image" id="UL" src="Images/Blank.jpg" onclick="buttonClick('UL')"/></td>
+						<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="UM" src="Images/Blank.jpg" onclick="buttonClick('UM')"/></td>
+						<td><input type="image" id="UR" src="Images/Blank.jpg" onclick="buttonClick('UR')"/></td>
 					</tr>
 					<tr >
-						<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="ML" src="Images/Blank.jpg" /></td>
-						<td style="border:solid 1px"><input type="image" id="MM" src="Images/Blank.jpg" /></td>
-						<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="MR" src="Images/Blank.jpg" /></td>
+						<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="ML" src="Images/Blank.jpg" onclick="buttonClick('ML')"/></td>
+						<td style="border:solid 1px"><input type="image" id="MM" src="Images/Blank.jpg" onclick="buttonClick('MM')"/></td>
+						<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="MR" src="Images/Blank.jpg" onclick="buttonClick('MR')"/></td>
 					</tr>
 					<tr>
-						<td><input type="image" id="LL" src="Images/Blank.jpg" /></td>
-						<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="LM" src="Images/Blank.jpg" /></td>
-						<td><input type="image" id="LR" src="Images/Blank.jpg" /></td>
+						<td><input type="image" id="LL" src="Images/Blank.jpg" onclick="buttonClick('LL')"/></td>
+						<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="LM" src="Images/Blank.jpg" onclick="buttonClick('LM')"/></td>
+						<td><input type="image" id="LR" src="Images/Blank.jpg" onclick="buttonClick('LR')"/></td>
 					</tr>
 				</table>
 				
