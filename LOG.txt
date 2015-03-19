@@ -1,3 +1,7 @@
+15/03/18
+-Rewrote board to be one single array instead of a double array.
+	Might be simpler. Still trying to work out some of the logic.
+
 15/03/16
 -Set up board beyond just toggling pictures.
 	Now does not change picture back if clicked again.

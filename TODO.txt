@@ -1,3 +1,9 @@
+15/03/18
+-Implement 1/2 player.
+-Implement difficulty level.
+-Implement recursive AI for TicTacToe
+-Create snake game in HTML5
+
 15/03/16
 -Implement recursive AI for TicTacToe
 -Create TicTacToe in javascript
