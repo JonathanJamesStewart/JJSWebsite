@@ -1,7 +1,15 @@
+15/03/21.1
+-Implement 1/2 player.
+-Implement difficulty level.
+-Create snake game in HTML5.
+-Add win/lose/draw announcements.
+
 15/03/21
 -Implement 1/2 player.
 -Implement difficulty level.
 -Create snake game in HTML5.
+-Maybe reduce tictactoe image size.
+-Add win/lose/draw announcements.
 
 15/03/18
 -Implement 1/2 player.

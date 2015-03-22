@@ -8,9 +8,11 @@ var playerValue = 1;
 var AIValue = -1;
 var neutralValue = 0;
 
+//Function called when an image button is clicked.
 function buttonClick(button){
 	var clickedButton = document.getElementById(button);
 	
+	//Decide which image button is clicked.
 	switch(clickedButton.id){
 		case 'UL':
 			userPick(0,clickedButton);
@@ -44,11 +46,17 @@ function buttonClick(button){
 	}
 }
 
+//Changes the user's choice to their image if there has
+//not been a winner and the cell is available.
+//Starts the recursive function to decide which cell to
+//pick.
 function userPick(cell, clickedButton){
+	//If there is already a winner disable any more moves.
 	if(checkWin(board) != neutralValue){
 		return;
 	}
 	
+	//If the space is not taken set their image.
 	if(!isTaken(board, cell)){
 		clickedButton.src = userImage;
 		board[cell] = playerValue;
@@ -56,9 +64,11 @@ function userPick(cell, clickedButton){
 	
 	var win = checkWin(board);
 	
+	//If the user wins tell them so.
 	if(win != neutralValue){
 		document.getElementById('out').innerHTML = '<p>WIN!</p>';
 	}else{
+		//Else tell the computer to make a move.
 		var response = AIPick(board.slice(0), AIValue, 7).move;
 		
 		if(response == null) return;
@@ -69,33 +79,46 @@ function userPick(cell, clickedButton){
 	//document.getElementById('out').innerHTML = '<p>' + printBoard() + '</p>';
 }
 
+//Recursive function to decide where to go.
 function AIPick(tempBoard, player, depth){
 	var w = checkWin(tempBoard);
 	
+	//If there is already a winner make no move.
 	if(w != neutralValue || depth == 0){
 		return {move: null, win: w};
 	}
 	
 	var wins = {'-1': [], '0': [], '1': []};
 	
+	//For each cell test to see if we can move there.
 	for(var i = 0; i < tempBoard.length; i++){
 		if(!isTaken(tempBoard, i)){
+			//If we can move there make a copy of the board and do so.
 			var copy = tempBoard.slice(0);
 			copy[i] = player;
+			
+			//Make recursive call. Switch player. Reduce depth.
 			var t = AIPick(copy, -player, depth - 1);
+			
+			//Catalog the list of wins.
 			wins[t.win].push({move: i, win: t.win});
 		}
 	}
 	
 	var preference = [player, neutralValue, -player];
+	
+	//Pick our preference. If there is none pick a random.
 	for(var i = 0; i < preference.length; i++){
 		if(wins[preference[i]].length){
 			return pickRandom(wins[preference[i]]);
 		}
 	}
+	
+	//If there is no valid move return nothing.
 	return {move: null, win: neutralValue};
 }
 
+//Simple function to determine if a cell on a given board is available.
 function isTaken(tempBoard, cell){
 	if(tempBoard[cell] != neutralValue){
 		return true;
@@ -103,6 +126,7 @@ function isTaken(tempBoard, cell){
 	return false;
 }
 
+//Resets the original board to be able to play again.
 function reset(){
 	for(x = 0; x < board.length; x++){
 		board[x] = neutralValue;
@@ -112,6 +136,7 @@ function reset(){
 	document.getElementById('out').innerHTML = '';
 }
 
+//Checks for a winner on the given board and returns the winner's value.
 function checkWin(tempBoard){
 	var a = 0;
 	var b = 0;
@@ -185,14 +210,17 @@ function checkWin(tempBoard){
 	return win;
 }
 
+//Determines if 3 values are equal.
 function areEqual(a, b, c){
 	return (a == b && a == c);
 }
 
+//Picks a random move from a list of values.
 function pickRandom(a){
 	return a[Math.floor(Math.random() * a.length)];
 }
 
+//Returns the board in straight line format.
 function printBoard(){
 	var s = '';
 	
