@@ -1,3 +1,8 @@
+15/03/21
+-Implement 1/2 player.
+-Implement difficulty level.
+-Create snake game in HTML5.
+
 15/03/18
 -Implement 1/2 player.
 -Implement difficulty level.

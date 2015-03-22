@@ -1,3 +1,6 @@
+15/03/21
+-Tictactoe is now working. Only plays a perfect game. Has no difficulty.
+
 15/03/18
 -Rewrote board to be one single array instead of a double array.
 	Might be simpler. Still trying to work out some of the logic.

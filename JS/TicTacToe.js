@@ -1,11 +1,12 @@
 //Since I cannot use a singleton this will have to serve as a board.
 var userImage = 'Images/X.jpg';
-var AIImage = 'Images/Y.jpg';
+var AIImage = 'Images/O.jpg';
 var blankImage = 'Images/Blank.jpg';
 var boardIDs = ['UL','UM','UR','ML','MM','MR','LL','LM','LR'];
 var board = [0,0,0,0,0,0,0,0,0];
 var playerValue = 1;
 var AIValue = -1;
+var neutralValue = 0;
 
 function buttonClick(button){
 	var clickedButton = document.getElementById(button);
@@ -44,24 +45,59 @@ function buttonClick(button){
 }
 
 function userPick(cell, clickedButton){
-	if(!isTaken(cell)){
+	if(checkWin(board) != neutralValue){
+		return;
+	}
+	
+	if(!isTaken(board, cell)){
 		clickedButton.src = userImage;
 		board[cell] = playerValue;
 	}
 	
-	if(checkWin() != playerValue){
-		AIPick():
+	var win = checkWin(board);
+	
+	if(win != neutralValue){
+		document.getElementById('out').innerHTML = '<p>WIN!</p>';
+	}else{
+		var response = AIPick(board.slice(0), AIValue, 7).move;
+		
+		if(response == null) return;
+		board[response] = AIValue;
+		document.getElementById(boardIDs[response]).src = AIImage;
 	}
 	
 	//document.getElementById('out').innerHTML = '<p>' + printBoard() + '</p>';
 }
 
-function AIPick(){
+function AIPick(tempBoard, player, depth){
+	var w = checkWin(tempBoard);
 	
+	if(w != neutralValue || depth == 0){
+		return {move: null, win: w};
+	}
+	
+	var wins = {'-1': [], '0': [], '1': []};
+	
+	for(var i = 0; i < tempBoard.length; i++){
+		if(!isTaken(tempBoard, i)){
+			var copy = tempBoard.slice(0);
+			copy[i] = player;
+			var t = AIPick(copy, -player, depth - 1);
+			wins[t.win].push({move: i, win: t.win});
+		}
+	}
+	
+	var preference = [player, neutralValue, -player];
+	for(var i = 0; i < preference.length; i++){
+		if(wins[preference[i]].length){
+			return pickRandom(wins[preference[i]]);
+		}
+	}
+	return {move: null, win: neutralValue};
 }
 
-function isTaken(cell){
-	if(board[cell] != 0){
+function isTaken(tempBoard, cell){
+	if(tempBoard[cell] != neutralValue){
 		return true;
 	}
 	return false;
@@ -69,12 +105,14 @@ function isTaken(cell){
 
 function reset(){
 	for(x = 0; x < board.length; x++){
-		board[x] = 0;
+		board[x] = neutralValue;
 		document.getElementById(boardIDs[x]).src = blankImage;
 	}
+	
+	document.getElementById('out').innerHTML = '';
 }
 
-function checkWin(){
+function checkWin(tempBoard){
 	var a = 0;
 	var b = 0;
 	var c = 0;
@@ -89,11 +127,11 @@ function checkWin(){
 	z = 6;
 	
 	while(x < 3){
-		a = board[x];
-		b = board[y];
-		c = board[z];
+		a = tempBoard[x];
+		b = tempBoard[y];
+		c = tempBoard[z];
 		
-		if(areEqual(a, b, c) && a != 0){
+		if(areEqual(a, b, c) && a != neutralValue){
 			win = a;
 		}
 		
@@ -107,11 +145,11 @@ function checkWin(){
 	z = 2;
 	
 	while(x < 7){
-		a = board[x];
-		b = board[y];
-		c = board[z];
+		a = tempBoard[x];
+		b = tempBoard[y];
+		c = tempBoard[z];
 		
-		if(areEqual(a, b, c) && a != 0){
+		if(areEqual(a, b, c) && a != neutralValue){
 			win = a;
 		}
 		
@@ -124,11 +162,11 @@ function checkWin(){
 	y = 4;
 	z = 8;
 	
-	a = board[x];
-	b = board[y];
-	c = board[z];
+	a = tempBoard[x];
+	b = tempBoard[y];
+	c = tempBoard[z];
 	
-	if(areEqual(a, b, c) && a != 0){
+	if(areEqual(a, b, c) && a != neutralValue){
 		win = a;
 	}
 	
@@ -136,11 +174,11 @@ function checkWin(){
 	y = 4;
 	z = 6;
 	
-	a = board[x];
-	b = board[y];
-	c = board[z];
+	a = tempBoard[x];
+	b = tempBoard[y];
+	c = tempBoard[z];
 	
-	if(areEqual(a, b, c) && a != 0){
+	if(areEqual(a, b, c) && a != neutralValue){
 		win = a;
 	}
 	
@@ -149,6 +187,10 @@ function checkWin(){
 
 function areEqual(a, b, c){
 	return (a == b && a == c);
+}
+
+function pickRandom(a){
+	return a[Math.floor(Math.random() * a.length)];
 }
 
 function printBoard(){
