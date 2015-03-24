@@ -1,3 +1,6 @@
+15/03/23
+-Set up snake game page, image, etc.
+
 15/03/21.1
 -Added commenting to TicTacToe.js
 -Reduced x.jpg, o.jpg, blank.jpg image sizes.
