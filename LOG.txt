@@ -1,3 +1,6 @@
+15/03/24
+-Base snake game is now working. Still a few things to implement.
+
 15/03/23
 -Set up snake game page, image, etc.
 
