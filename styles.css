@@ -28,10 +28,42 @@ body {
     padding:10px;
 }
 
+#board{
+	margin:0 auto;
+	width:530px;
+}
+
 #content{
 	margin:10px;
 	padding:10px;
-	text-align:center;
+}
+
+#difficulty{
+	float:right;
+	width:100px;
+}
+
+#players{
+	clear:both;
+	float:right;
+	width:100px;
+}
+
+#reset{
+	clear:both;
+	float:right;
+	width:100px;
+}
+
+#score{
+	clear:both;
+	float:right;
+	width:100px;
+}
+
+#options{
+	float:left;
+	width:27%;
 }
 
 a{
@@ -63,4 +95,22 @@ img{
 img:hover{
 	padding:0;
 	border:1px solid #387181;
+}
+
+input[type="radio"]{
+	float:left;
+	clear:left;
+}
+
+label{
+	float:left;
+}
+
+p{
+margin:0;
+pading:0;
+}
+
+button{
+	margin:5px;
 }

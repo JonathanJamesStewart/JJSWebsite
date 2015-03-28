@@ -1,12 +1,20 @@
 //Since I cannot use a singleton this will have to serve as a board.
-var userImage = 'Images/X.jpg';
-var AIImage = 'Images/O.jpg';
+var player1Image = 'Images/X.jpg';
+var player2Image = 'Images/O.jpg';
 var blankImage = 'Images/Blank.jpg';
 var boardIDs = ['UL','UM','UR','ML','MM','MR','LL','LM','LR'];
 var board = [0,0,0,0,0,0,0,0,0];
-var playerValue = 1;
-var AIValue = -1;
+var player1Value = 1;
+var player2Value = -1;
 var neutralValue = 0;
+var numPlayers = '1';
+var player1Wins = 0;
+var player2Wins = 0;
+var medMistakeChance = .4;
+var easyMistakeChance = .9;
+var hardMistakeChance = 0;
+var mistakeChance = medMistakeChance;
+var playerTurn = 1;
 
 //Function called when an image button is clicked.
 function buttonClick(button){
@@ -58,25 +66,81 @@ function userPick(cell, clickedButton){
 	
 	//If the space is not taken set their image.
 	if(!isTaken(board, cell)){
-		clickedButton.src = userImage;
-		board[cell] = playerValue;
+		if(playerTurn > 0){
+			clickedButton.src = player1Image;
+			board[cell] = player1Value;
+		}else{
+			clickedButton.src = player2Image;
+			board[cell] = player2Value;
+		}
+		if(numPlayers == '2'){
+			playerTurn = -playerTurn;
+		}
+	}else{
+		return;
 	}
 	
-	var win = checkWin(board);
+	if(numPlayers == '1'){
+		var win = checkWin(board);
 	
-	//If the user wins tell them so.
-	if(win != neutralValue){
-		document.getElementById('out').innerHTML = '<p>WIN!</p>';
-	}else{
-		//Else tell the computer to make a move.
-		var response = AIPick(board.slice(0), AIValue, 7).move;
+		//If the user wins tell them so.
+		if(win > neutralValue){
+			incrementWinCount(win);
+		}else{
+			//Else tell the computer to make a move.
+			
+			if(Math.random() < mistakeChance){
+				var response = makeMistake();
+			}else{
+				var response = AIPick(board.slice(0), player2Value, 7).move;
+			}
+			
+			if(response == null) return;
+			
+			board[response] = player2Value;
+			document.getElementById(boardIDs[response]).src = player2Image;
+			win = checkWin(board);
 		
-		if(response == null) return;
-		board[response] = AIValue;
-		document.getElementById(boardIDs[response]).src = AIImage;
+			if(win < neutralValue){
+				incrementWinCount(win);
+			}
+		}
+	}else{
+		var win = checkWin(board);
+		
+		if(win != neutralValue){
+			incrementWinCount(win);
+		}
 	}
 	
 	//document.getElementById('out').innerHTML = '<p>' + printBoard() + '</p>';
+}
+
+function makeMistake(){
+	var move = Math.floor(Math.random() * board.length);
+	
+	while(isTaken(board, move)){
+		move = Math.floor(Math.random() * board.length);
+	}
+	
+	//console.log('Mistake');
+	return move;
+}
+
+function incrementWinCount(win){
+	var label;
+	
+	if(win > neutralValue){
+		label = document.getElementById('player1Score');
+		document.getElementById('out').innerHTML = '<p>PLAYER 1 WINS!</p>';
+	}else{
+		label = document.getElementById('player2Score');
+		document.getElementById('out').innerHTML = '<p>PLAYER 2 WINS!</p>';
+	}
+	
+	var val = label.innerHTML;
+	var val = parseInt(val) + 1;
+	label.innerHTML = val;
 }
 
 //Recursive function to decide where to go.
@@ -128,12 +192,20 @@ function isTaken(tempBoard, cell){
 
 //Resets the original board to be able to play again.
 function reset(){
+	newGame();
+	
+	document.getElementById('player1Score').innerHTML = '0';
+	document.getElementById('player2Score').innerHTML = '0';
+}
+
+function newGame(){
 	for(x = 0; x < board.length; x++){
 		board[x] = neutralValue;
 		document.getElementById(boardIDs[x]).src = blankImage;
 	}
 	
 	document.getElementById('out').innerHTML = '';
+	playerTurn = 1;
 }
 
 //Checks for a winner on the given board and returns the winner's value.
@@ -229,4 +301,33 @@ function printBoard(){
 	}
 	
 	return s;
+}
+
+function setDifficulty(radio){
+	var difficulty = radio.value;
+	
+	switch(difficulty){
+		case 'easy':
+			mistakeChance = easyMistakeChance;
+			break;
+		case 'medium':
+			mistakeChance = medMistakeChance;
+			break;
+		case 'hard':
+			mistakeChance = hardMistakeChance;
+			break;
+		default:
+			mistakeChance = medMistakeChance;
+			break;
+	}
+	
+	newGame();
+	//document.getElementById('out').innerHTML = '<p>Difficulty Changed</p>' + difficulty;
+}
+
+function setPlayers(radio){
+	numPlayers = radio.value;
+	
+	newGame();
+	//document.getElementById('out').innerHTML = '<p>numPlayers Changed</p>' + numPlayers;
 }

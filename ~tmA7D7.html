@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>JS Projects</title>
+		<link href="styles.css" rel="stylesheet" >
+		<link rel="shortcut icon" href="Images/favicon.ico" />
+		<script type="text/javascript" src="JS/TicTacToe.js"></script>
+	</head>
+	<body ccID="256">
+		  <div ccID="268" id="header">Jonathan Stewart</div>
+			<hr ccID="312" />
+			
+			<div ccID="328" id="navigation">
+				<a ccID="355" href="index.html">Home</a>
+		  	<a ccID="391" href="contact.html">Contact</a>
+				<a ccID="431" href="projects.html">Projects</a>
+		  </div>
+			
+			<hr ccID="489" />
+			
+			<div ccID="505" id="content">
+				
+				<button ccID="535" onclick="reset()">Reset</button>
+				<div ccID="581" id="board">
+					<table ccID="604" align="center">
+						<tr ccID="634">
+							<td ccID="647"><input ccID="651" type="image" id="UL" src="Images/Blank.jpg" onclick="buttonClick('UL')"/></td>
+							<td ccID="745" style="border-right:solid 1px; border-left:solid 1px"><input ccID="803" type="image" id="UM" src="Images/Blank.jpg" onclick="buttonClick('UM')"/></td>
+							<td ccID="897"><input ccID="901" type="image" id="UR" src="Images/Blank.jpg" onclick="buttonClick('UR')"/></td>
+						</tr>
+						<tr ccID="1007" >
+							<td ccID="1021" style="border-top:solid 1px; border-bottom:solid 1px;"><input ccID="1080" type="image" id="ML" src="Images/Blank.jpg" onclick="buttonClick('ML')"/></td>
+							<td ccID="1174" style="border:solid 1px"><input ccID="1203" type="image" id="MM" src="Images/Blank.jpg" onclick="buttonClick('MM')"/></td>
+							<td ccID="1297" style="border-top:solid 1px; border-bottom:solid 1px;"><input ccID="1356" type="image" id="MR" src="Images/Blank.jpg" onclick="buttonClick('MR')"/></td>
+						</tr>
+						<tr ccID="1462">
+							<td ccID="1475"><input ccID="1479" type="image" id="LL" src="Images/Blank.jpg" onclick="buttonClick('LL')"/></td>
+							<td ccID="1573" style="border-right:solid 1px; border-left:solid 1px"><input ccID="1631" type="image" id="LM" src="Images/Blank.jpg" onclick="buttonClick('LM')"/></td>
+							<td ccID="1725"><input ccID="1729" type="image" id="LR" src="Images/Blank.jpg" onclick="buttonClick('LR')"/></td>
+						</tr>
+					</table>
+				</div>
+				
+				<div ccID="1866" id="options">
+					<form ccID="1891" action="">
+						<input ccID="1915" type="radio" name="difficulty" value="easy" />Easy<br ccID="1972">
+						<input ccID="1984" type="radio" name="difficulty" value="medium" checked="checked"/>Medium<br ccID="2062">
+						<input ccID="2074" type="radio" name="difficulty" value="hard" />Hard
+					</form>
+				</div>
+				
+				<div ccID="2169" id="out"></div>
+			</div>
+			<div ccID="2205" id="footer">
+				<hr ccID="2228" />
+			
+				<div ccID="2245" id="navigation">
+					<a ccID="2273" href="index.html">Home</a>
+		  		<a ccID="2310" href="contact.html">Contact</a>
+					<a ccID="2351" href="projects.html">Projects</a>
+		  	</div>
+			</div>
+	</body>
+</html>

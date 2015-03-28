@@ -1,3 +1,9 @@
+15/03/27
+-TicTacToe is now complete.
+	-1/2 player.
+	-Difficulty Level.
+	-Winner announcements.
+
 15/03/24
 -Base snake game is now working. Still a few things to implement.
 

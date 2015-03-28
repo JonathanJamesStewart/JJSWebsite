@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>JS Projects</title>
+		<title>Tic Tac Toe</title>
 		<link href="styles.css" rel="stylesheet" >
 		<link rel="shortcut icon" href="Images/favicon.ico" />
 		<script type="text/javascript" src="JS/TicTacToe.js"></script>
@@ -19,26 +19,62 @@
 			<hr />
 			
 			<div id="content">
-				
-				<button onclick="reset()">Reset</button>
-				
-				<table align="center">
-					<tr>
-						<td><input type="image" id="UL" src="Images/Blank.jpg" onclick="buttonClick('UL')"/></td>
-						<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="UM" src="Images/Blank.jpg" onclick="buttonClick('UM')"/></td>
-						<td><input type="image" id="UR" src="Images/Blank.jpg" onclick="buttonClick('UR')"/></td>
-					</tr>
-					<tr >
-						<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="ML" src="Images/Blank.jpg" onclick="buttonClick('ML')"/></td>
-						<td style="border:solid 1px"><input type="image" id="MM" src="Images/Blank.jpg" onclick="buttonClick('MM')"/></td>
-						<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="MR" src="Images/Blank.jpg" onclick="buttonClick('MR')"/></td>
-					</tr>
-					<tr>
-						<td><input type="image" id="LL" src="Images/Blank.jpg" onclick="buttonClick('LL')"/></td>
-						<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="LM" src="Images/Blank.jpg" onclick="buttonClick('LM')"/></td>
-						<td><input type="image" id="LR" src="Images/Blank.jpg" onclick="buttonClick('LR')"/></td>
-					</tr>
-				</table>
+				<div id="options">
+					<div id="difficulty">
+						<p>Difficulty</p>
+						<hr />
+						<form action="">
+							<input type="radio" name="difficulty" onclick="setDifficulty(this);" value="easy"/>
+							<label for="easy">Easy</label><br />
+							<input type="radio" name="difficulty" onclick="setDifficulty(this);" value="medium" checked="checked"/>
+							<label for="medium">Medium</label><br />
+							<input type="radio" name="difficulty" onclick="setDifficulty(this);" value="hard" />
+							<label for="hard">Hard</label><br />
+						</form>
+						<hr />
+					</div>
+					<div id="players">
+						<p>Players</p>
+						<hr />
+						<form action="">
+							<input type="radio" name="players" onclick="setPlayers(this);" value="1" checked="checked">
+							<label for="1">1</label><br />
+							<input type="radio" name="players" onclick="setPlayers(this);" value="2"/>
+							<label for="2">2</label><br />
+						</form>
+						<hr />
+					</div>
+					<div id="score">
+						<p>Score</p>
+						<hr />
+						<p style="float: left;">Player 1:</p><label id="player1Score" style="float:right;">0</label>
+						<p style="float: left;">Player 2:</p><label id="player2Score" style="float:right;">0</label>
+					</div>
+					<div id="reset">
+						<hr />
+						<button onclick="newGame()">New Game</button>
+						<button onclick="reset()">Reset</button>
+					</div>
+				</div>
+				<div id="board">
+					<table>
+						<tr>
+							<td><input type="image" id="UL" src="Images/Blank.jpg" onclick="buttonClick('UL')"/></td>
+							<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="UM" src="Images/Blank.jpg" onclick="buttonClick('UM')"/></td>
+							<td><input type="image" id="UR" src="Images/Blank.jpg" onclick="buttonClick('UR')"/></td>
+						</tr>
+						<tr >
+							<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="ML" src="Images/Blank.jpg" onclick="buttonClick('ML')"/></td>
+							<td style="border:solid 1px"><input type="image" id="MM" src="Images/Blank.jpg" onclick="buttonClick('MM')"/></td>
+							<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="MR" src="Images/Blank.jpg" onclick="buttonClick('MR')"/></td>
+						</tr>
+						<tr>
+							<td><input type="image" id="LL" src="Images/Blank.jpg" onclick="buttonClick('LL')"/></td>
+							<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="LM" src="Images/Blank.jpg" onclick="buttonClick('LM')"/></td>
+							<td><input type="image" id="LR" src="Images/Blank.jpg" onclick="buttonClick('LR')"/></td>
+						</tr>
+					</table>
+				</div>
 				
 				<div id="out"></div>
 			</div>
