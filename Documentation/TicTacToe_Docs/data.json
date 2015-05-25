@@ -1,0 +1,1090 @@
+{
+    "project": {},
+    "files": {
+        "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js": {
+            "name": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "modules": {},
+            "classes": {
+                "DisplayAdapter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js": {
+            "name": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "modules": {},
+            "classes": {
+                "GameBoard": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js": {
+            "name": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "modules": {},
+            "classes": {
+                "ModelController": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js": {
+            "name": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "modules": {},
+            "classes": {
+                "Player": 1,
+                "AIPlayer": 1,
+                "PersonPlayer": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerFactory.js": {
+            "name": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerFactory.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js": {
+            "name": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "modules": {},
+            "classes": {
+                "PlayerTurnManager": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js": {
+            "name": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js",
+            "modules": {},
+            "classes": {
+                "RuleSet": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "DisplayAdapter": {
+            "name": "DisplayAdapter",
+            "shortname": "DisplayAdapter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 5,
+            "description": "Display adapter handles Updating the display for the user and\ncommunication between the two."
+        },
+        "GameBoard": {
+            "name": "GameBoard",
+            "shortname": "GameBoard",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 9,
+            "description": "GameBoard maintains the state of the current game. Who has\ngone where. It can determing if it is in a winning state."
+        },
+        "ModelController": {
+            "name": "ModelController",
+            "shortname": "ModelController",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 37,
+            "description": "ModelController is responsible for coordinating communication\nbetween the DisplayAdapter and the model. It then formulates\na response and sends it back to the DisplayAdapter to show the\nuser."
+        },
+        "Player": {
+            "name": "Player",
+            "shortname": "Player",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 5,
+            "description": "Player. Essentially an abstract class that holds values for its\nsubclasses.",
+            "params": [
+                {
+                    "name": "playerValue",
+                    "description": "The value the player has. Typicall -1 or 1.",
+                    "type": "Int"
+                },
+                {
+                    "name": "playerImagePath",
+                    "description": "The relative path to the image this player has.",
+                    "type": "String"
+                },
+                {
+                    "name": "difficulty",
+                    "description": "The difficulty of the player if it is a computer player.",
+                    "type": "DIFFICULTY"
+                }
+            ]
+        },
+        "AIPlayer": {
+            "name": "AIPlayer",
+            "shortname": "AIPlayer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 76,
+            "description": "AIPlayer represents the computer player. It uses a recursive algorithm to decide where to move\nbased on inputs."
+        },
+        "PersonPlayer": {
+            "name": "PersonPlayer",
+            "shortname": "PersonPlayer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 200,
+            "description": "PersonPlayer represents the user. It simply finds the difference between the old and\nnew board and returns the value. Only if the difference is made by this player."
+        },
+        "PlayerTurnManager": {
+            "name": "PlayerTurnManager",
+            "shortname": "PlayerTurnManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 5,
+            "description": "The PlayerTurnManager decides which order the players should go in.\nIt manages the addition and removal of players and their order."
+        },
+        "RuleSet": {
+            "name": "RuleSet",
+            "shortname": "RuleSet",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js",
+            "line": 5,
+            "description": "Holds and stores a set of rules that define win states\nfor this game."
+        }
+    },
+    "classitems": [
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 1,
+            "author": "Jonathan Stewart",
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 13,
+            "description": "Communicates to the ModelController where to move.",
+            "itemtype": "method",
+            "name": "makeMove",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "The space to move.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The space that the model decided to move next.",
+                "type": "Int"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 25,
+            "description": "Communicates to the ModelController that the user wants to\nchange difficulty. Resets game.",
+            "itemtype": "method",
+            "name": "changeDifficulty",
+            "params": [
+                {
+                    "name": "newDifficulty",
+                    "description": "The string representation of the new difficulty.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The new difficulty on success.",
+                "type": "String"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 39,
+            "description": "Communicates to the ModelController that the user wants to\nchange the number of players.",
+            "itemtype": "method",
+            "name": "changeNumPlayers",
+            "params": [
+                {
+                    "name": "newNumPlayers",
+                    "description": "The new number of players. Typically 1 or 2.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The number of players set.",
+                "type": "Int"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 53,
+            "description": "Resets everything and tells the ModelController to reset.",
+            "itemtype": "method",
+            "name": "reset",
+            "return": {
+                "description": "True on success.",
+                "type": "Boolean"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 78,
+            "description": "Sets up a new game without changing the win counts.",
+            "itemtype": "method",
+            "name": "newGame",
+            "return": {
+                "description": "True on success.",
+                "type": "Boolean"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 98,
+            "description": "Gets a specified element by ID. Null if not found.",
+            "itemtype": "method",
+            "name": "getElement",
+            "params": [
+                {
+                    "name": "elementID",
+                    "description": "the string representation of the element ID.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The element if found. Null if not.",
+                "type": "Element"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 118,
+            "description": "Sets the inner HTML of an element if it can.",
+            "itemtype": "method",
+            "name": "setInnerHTML",
+            "params": [
+                {
+                    "name": "elementID",
+                    "description": "The string representation of the element ID.",
+                    "type": "String"
+                },
+                {
+                    "name": "HTML",
+                    "description": "The HTML to be set.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "True on success.",
+                "type": "Boolean"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 137,
+            "description": "Sets the source for an element by element ID if it can.",
+            "itemtype": "method",
+            "name": "setSrc",
+            "params": [
+                {
+                    "name": "elementID",
+                    "description": "The string representation of the element ID.",
+                    "type": "String"
+                },
+                {
+                    "name": "src",
+                    "description": "The string representation of the relative path to the source.",
+                    "type": "String"
+                }
+            ],
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js",
+            "line": 155,
+            "description": "Increments the score of playerNum on the display.",
+            "itemtype": "method",
+            "name": "incrementScore",
+            "params": [
+                {
+                    "name": "playerNum",
+                    "description": "The player number to increment. Typically 1 or 2.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The new score of that player.",
+                "type": "Int"
+            },
+            "class": "DisplayAdapter"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 1,
+            "author": "Jonathan Stewart",
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 20,
+            "description": "Sets the index of the board to the playerValue if it is not already taken.",
+            "itemtype": "method",
+            "name": "makeMove",
+            "params": [
+                {
+                    "name": "player",
+                    "description": "The player that is trying to make the move.",
+                    "type": "Player"
+                },
+                {
+                    "name": "index",
+                    "description": "The space that the player is trying to move in.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "True if the space has not already been taken.",
+                "type": "Boolean"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 39,
+            "description": "Queries whether a space is taken or not.",
+            "itemtype": "method",
+            "name": "isTaken",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "The space in question.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "True if the space is taken.",
+                "type": "Boolean"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 53,
+            "description": "Counts the spaces that have not been taken yet.",
+            "itemtype": "method",
+            "name": "emptyCount",
+            "return": {
+                "description": "The number of spaces that have not been taken.",
+                "type": "Int"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 73,
+            "description": "Returns the winner of the board if there is one.",
+            "itemtype": "method",
+            "name": "checkWin",
+            "return": {
+                "description": "The winner. NeutralValue if none.",
+                "type": "Int"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 101,
+            "description": "Returns a duplicate of this board.",
+            "itemtype": "method",
+            "name": "copyBoard",
+            "return": {
+                "description": "The copy of this board.",
+                "type": "GameBoard"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 111,
+            "description": "Returns the value of the requested space.",
+            "itemtype": "method",
+            "name": "getSpaceValue",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "The space to be requested.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The value of the space.",
+                "type": "Int"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 122,
+            "description": "Returns the number of cells on this board.",
+            "itemtype": "method",
+            "name": "getBoardSize",
+            "return": {
+                "description": "The number of cells on this board.",
+                "type": "Int"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 132,
+            "description": "Returns the neutral value of this board. Not necessarily 0.",
+            "itemtype": "method",
+            "name": "getNeutralValue",
+            "return": {
+                "description": "The neutral value.",
+                "type": "Int"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 142,
+            "description": "Returns a string representation of this board.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "The string representation.",
+                "type": "String"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js",
+            "line": 153,
+            "description": "Determines if a an array of items are equal or not.",
+            "itemtype": "method",
+            "name": "areEqual",
+            "params": [
+                {
+                    "name": "itemList",
+                    "description": "The list of items to compare.",
+                    "type": "Int[]"
+                }
+            ],
+            "return": {
+                "description": "True if they are equal.",
+                "type": "Boolean"
+            },
+            "class": "GameBoard"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 1,
+            "author": "Jonathan Stewart",
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 9,
+            "description": "Difficulty defines the allowed variations on difficulty\nthat can be set for the Player.",
+            "itemtype": "property",
+            "name": "HARD",
+            "type": "DIFFICULTY",
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 24,
+            "description": "PLAYER_TYPE defines the types of players allowed.",
+            "itemtype": "property",
+            "name": "COMPUTER",
+            "type": "PLAYER_TYPE",
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 52,
+            "description": "Initializer function for ModelController. Sets up the board, rules,\netc. Can also be used to reset everything.",
+            "itemtype": "method",
+            "name": "init",
+            "return": {
+                "description": "Returns string representation of new board on success.",
+                "type": "String"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 96,
+            "description": "Coordinates the moves when a player chooses a space to move. Responds\nby setting the index the player chose and the index the computer chose\nif applicable.",
+            "itemtype": "method",
+            "name": "makeMove",
+            "params": [
+                {
+                    "name": "index",
+                    "description": "The index the player chose.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The move the computer chose if applicable. Null otherwise.",
+                "type": "Int"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 149,
+            "description": "Checks if the board is in a winning state.",
+            "itemtype": "method",
+            "name": "checkWin",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "The current GameBoard.",
+                    "type": "Gameboard"
+                }
+            ],
+            "return": {
+                "description": "True if the board is in a winning state. False otherwise.",
+                "type": "Boolean"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 165,
+            "description": "Tells the DisplayAdapter to increment the score display.",
+            "itemtype": "method",
+            "name": "incrementScore",
+            "params": [
+                {
+                    "name": "win",
+                    "description": "The playerValue of the winner.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The new score that is displayed.",
+                "type": "Int"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 183,
+            "description": "Changes the difficulty of the AI.",
+            "itemtype": "method",
+            "name": "changeDifficulty",
+            "params": [
+                {
+                    "name": "newDifficulty",
+                    "description": "The difficulty setting. Easy, Medium, or Hard.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The difficulty enum that was picked.",
+                "type": "DIFFICULTY"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 212,
+            "description": "Changes the number of human players. Typically 1 or 2.",
+            "itemtype": "method",
+            "name": "changeNumPlayers",
+            "params": [
+                {
+                    "name": "newNumPlayers",
+                    "description": "The desired number of human players.",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "The new humann player count.",
+                "type": "Int"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 225,
+            "description": "Resets the gameBoard.",
+            "itemtype": "method",
+            "name": "reset",
+            "return": {
+                "description": "String representation of new board on success.",
+                "type": "String"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 236,
+            "description": "Initializes a new game.",
+            "itemtype": "method",
+            "name": "newGame",
+            "return": {
+                "description": "String representation of new board on success.",
+                "type": "String"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 247,
+            "description": "Initializes rules to be used to define win states. Change this\nmethod to add or change rules.",
+            "itemtype": "method",
+            "name": "makeRules",
+            "return": {
+                "description": "The rules that define a win state for this game.",
+                "type": "RuleSet"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js",
+            "line": 275,
+            "description": "Retuns the current board size.",
+            "itemtype": "method",
+            "name": "getBoardSize",
+            "return": {
+                "description": "the current board size.",
+                "type": "Int"
+            },
+            "class": "ModelController"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 1,
+            "author": "Jonathan Stewart",
+            "class": "Player"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 19,
+            "description": "Returns the difficulty of the player.",
+            "itemtype": "method",
+            "name": "getDifficulty",
+            "return": {
+                "description": "The difficulty of the player.",
+                "type": "DIFFICULTY"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 29,
+            "description": "Returns the player value.",
+            "itemtype": "method",
+            "name": "getPlayerValue",
+            "return": {
+                "description": "The value of this player.",
+                "type": "Int"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 39,
+            "description": "Returns the string representing the relative path to the image of this player.",
+            "itemtype": "method",
+            "name": "getPlayerImagePath",
+            "return": {
+                "description": "The string representing the relative path to the image.",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 49,
+            "description": "Sets the difficulty of the player to a new value.",
+            "itemtype": "method",
+            "name": "setDifficulty",
+            "params": [
+                {
+                    "name": "newDifficulty",
+                    "description": "The new difficulty to be set.",
+                    "type": "DIFFICULTY"
+                }
+            ],
+            "return": {
+                "description": "True on success.",
+                "type": "Boolean"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 65,
+            "description": "Returns the string representation of this player.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "The string representation of this player. \"PlayerValue: x PlayerImagePath: y\".",
+                "type": "String"
+            },
+            "class": "Player"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 84,
+            "description": "Basic makeMove that is called from the outside. Standard for Player subclasses.",
+            "itemtype": "method",
+            "name": "makeMove",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "The current board state.",
+                    "type": "GameBoard"
+                },
+                {
+                    "name": "playerTurnManager",
+                    "description": "Needed so the AI can maintain proper order of player movement.",
+                    "type": "PlayerTurnManager"
+                }
+            ],
+            "return": {
+                "description": "} A tuple that represents the move we make and the win state we expect.",
+                "type": "Move: m, win: w"
+            },
+            "class": "AIPlayer"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 102,
+            "description": "Called when the computer decides to make a mistake.",
+            "itemtype": "method",
+            "name": "makeMistake",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "The board state so we don't try to make a move on a invalid space.",
+                    "type": "GameBoard"
+                }
+            ],
+            "return": {
+                "description": "} A tuple that represents the move we make and the win state we expect.",
+                "type": "Move: m, win: w"
+            },
+            "class": "AIPlayer"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 119,
+            "description": "Recursive function that actually decides wher to move.",
+            "itemtype": "method",
+            "name": "computerPick",
+            "params": [
+                {
+                    "name": "board",
+                    "description": "The current copy of the board we are using.",
+                    "type": "GameBoard"
+                },
+                {
+                    "name": "playerTurnManager",
+                    "description": "So we can keep proper order when making moves.",
+                    "type": "PlayerTurnManager"
+                },
+                {
+                    "name": "depth",
+                    "description": "Used as one stop case for recursion when it is 0.",
+                    "type": "Int"
+                }
+            ],
+            "class": "AIPlayer"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 188,
+            "description": "Picks a random move from a list of preferences.",
+            "itemtype": "method",
+            "name": "pickRandom",
+            "params": [
+                {
+                    "name": "a",
+                    "description": "A list of acceptable moves.",
+                    "type": "Int[]"
+                }
+            ],
+            "return": {
+                "description": "The chosen space to move.",
+                "type": "Int"
+            },
+            "class": "AIPlayer"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js",
+            "line": 209,
+            "description": "Determines which move was made by this user.",
+            "itemtype": "method",
+            "name": "makeMove",
+            "params": [
+                {
+                    "name": "The",
+                    "description": "new board.",
+                    "type": "GameBoard"
+                }
+            ],
+            "return": {
+                "description": "} The tuple representing the move this user made.",
+                "type": "Move: m, win: w"
+            },
+            "class": "PersonPlayer"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerFactory.js",
+            "line": 1,
+            "author": "Jonathan Stewart",
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerFactory.js",
+            "line": 5,
+            "description": "This is the PlayerFactory. It creates human and computer players based on input.",
+            "itemtype": "method",
+            "name": "MakePlayer",
+            "params": [
+                {
+                    "name": "TYPE",
+                    "description": "The type of player we want to create. Typically human or computer.",
+                    "type": "PLAYER_TYPE"
+                },
+                {
+                    "name": "DIFF",
+                    "description": "The difficulty we want to set for the player if computer.",
+                    "type": "DIFFICULTY"
+                },
+                {
+                    "name": "IMAGE",
+                    "description": "The relative path to the image we want to represent this player.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Returns a player of the desired type.",
+                "type": "Player"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 1,
+            "author": "Jonathan Stewart",
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 15,
+            "description": "Adds a player to the turn queue.",
+            "itemtype": "method",
+            "name": "addPlayer",
+            "params": [
+                {
+                    "name": "newPlayer",
+                    "description": "The player to add.",
+                    "type": "Player"
+                }
+            ],
+            "return": {
+                "description": "Returns true on successful addition.",
+                "type": "Boolean"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 35,
+            "description": "Returns the next player in the queue. If this has not been called\nbefore it returns the first player. If there are no players it\nreturns null.",
+            "itemtype": "method",
+            "name": "nextPlayer",
+            "return": {
+                "description": "The next player in the queue or null if no players.",
+                "type": "Player"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 62,
+            "description": "Gets the current player.",
+            "itemtype": "method",
+            "name": "getCurrentPlayer",
+            "return": {
+                "description": "The player who has the current move.",
+                "type": "Player"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 77,
+            "description": "Sets the current player to the player passed in.",
+            "itemtype": "method",
+            "name": "setCurrentPlayer",
+            "params": [
+                {
+                    "name": "player",
+                    "description": "The player to give the turn to.",
+                    "type": "Player"
+                }
+            ],
+            "return": {
+                "description": "True if the setting was successful.",
+                "type": "Boolean"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 97,
+            "description": "Returns a copy of this object.",
+            "itemtype": "method",
+            "name": "copyPTM",
+            "return": {
+                "description": "The copy of this object.",
+                "type": "PlayerTurnManager"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 116,
+            "description": "Returns the number of players currently playing.",
+            "itemtype": "method",
+            "name": "getPlayerCount",
+            "return": {
+                "description": "The number of players.",
+                "type": "Int"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js",
+            "line": 126,
+            "description": "Returns a string representation of the state of this object.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "The string representation of the state of this object. \"[PlayerList] playerTurn: x\"",
+                "type": "String"
+            },
+            "class": "PlayerTurnManager"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js",
+            "line": 1,
+            "author": "Jonathan Stewart",
+            "class": "RuleSet"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js",
+            "line": 14,
+            "description": "Adds a rule to the rule collection.",
+            "itemtype": "method",
+            "name": "addRule",
+            "params": [
+                {
+                    "name": "rule",
+                    "description": "An array of integers representing cells that must match to define a win.",
+                    "type": "Int[]"
+                }
+            ],
+            "return": {
+                "description": "True if the rule has been added.",
+                "type": "Boolean"
+            },
+            "class": "RuleSet"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js",
+            "line": 31,
+            "description": "Returns the set of rules represented by an array of arrays. The external array\nis the collection of rules and each internal array is an individual rule.",
+            "itemtype": "method",
+            "name": "getRules",
+            "return": {
+                "description": "The representation of a collection of rules.",
+                "type": "int[int[]..int[]]"
+            },
+            "class": "RuleSet"
+        },
+        {
+            "file": "F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js",
+            "line": 42,
+            "description": "Returns the string representation of all rules. Could be better formatted.",
+            "itemtype": "method",
+            "name": "toString",
+            "return": {
+                "description": "The representation of all rules.",
+                "type": "String"
+            },
+            "class": "RuleSet"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type",
+            "line": " F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\DisplayAdapter.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\GameBoard.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\ModelController.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\Player.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerFactory.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\PlayerTurnManager.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " F:\\Users\\Jonathan\\Git\\JJSWebsite\\JS\\TicTacToe\\RuleSet.js:1"
+        }
+    ]
+}
