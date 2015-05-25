@@ -4,7 +4,14 @@
 		<title>Tic Tac Toe</title>
 		<link href="styles.css" rel="stylesheet" >
 		<link rel="shortcut icon" href="Images/favicon.ico" />
-		<script type="text/javascript" src="JS/TicTacToe.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type="text/javascript" src="JS/TicTacToe/RuleSet.js"></script>
+		<script type="text/javascript" src="JS/TicTacToe/Player.js"></script>
+		<script type="text/javascript" src="JS/TicTacToe/GameBoard.js"></script>
+		<script type="text/javascript" src="JS/TicTacToe/PlayerTurnManager.js"></script>
+		<script type="text/javascript" src="JS/TicTacToe/ModelController.js"></script>
+		<script type="text/javascript" src="JS/TicTacToe/PlayerFactory.js"></script>
+		<script type="text/javascript" src="JS/TicTacToe/DisplayAdapter.js"></script>
 	</head>
 	<body>
 		  <div id="header">Jonathan Stewart</div>
@@ -24,11 +31,11 @@
 						<p>Difficulty</p>
 						<hr />
 						<form action="">
-							<input type="radio" name="difficulty" onclick="setDifficulty(this);" value="easy"/>
+							<input type="radio" name="difficulty" onclick="DisplayAdapter.changeDifficulty('Easy')" value="easy"/>
 							<label for="easy">Easy</label><br />
-							<input type="radio" name="difficulty" onclick="setDifficulty(this);" value="medium" checked="checked"/>
+							<input type="radio" name="difficulty" onclick="DisplayAdapter.changeDifficulty('Medium')" value="medium"/>
 							<label for="medium">Medium</label><br />
-							<input type="radio" name="difficulty" onclick="setDifficulty(this);" value="hard" />
+							<input type="radio" name="difficulty" onclick="DisplayAdapter.changeDifficulty('Hard')" value="hard" checked="checked"/>
 							<label for="hard">Hard</label><br />
 						</form>
 						<hr />
@@ -37,9 +44,9 @@
 						<p>Players</p>
 						<hr />
 						<form action="">
-							<input type="radio" name="players" onclick="setPlayers(this);" value="1" checked="checked">
+							<input type="radio" name="players" onclick="DisplayAdapter.changeNumPlayers(1)" value="1" checked="checked">
 							<label for="1">1</label><br />
-							<input type="radio" name="players" onclick="setPlayers(this);" value="2"/>
+							<input type="radio" name="players" onclick="DisplayAdapter.changeNumPlayers(2)" value="2"/>
 							<label for="2">2</label><br />
 						</form>
 						<hr />
@@ -52,26 +59,26 @@
 					</div>
 					<div id="reset">
 						<hr />
-						<button onclick="newGame()">New Game</button>
-						<button onclick="reset()">Reset</button>
+						<button onclick="DisplayAdapter.newGame()">New Game</button>
+						<button onclick="DisplayAdapter.reset()">Reset</button>
 					</div>
 				</div>
 				<div id="board">
 					<table>
 						<tr>
-							<td><input type="image" id="UL" src="Images/Blank.jpg" onclick="buttonClick('UL')"/></td>
-							<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="UM" src="Images/Blank.jpg" onclick="buttonClick('UM')"/></td>
-							<td><input type="image" id="UR" src="Images/Blank.jpg" onclick="buttonClick('UR')"/></td>
+							<td><input type="image" id="0" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(0)"/></td>
+							<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="1" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(1)"/></td>
+							<td><input type="image" id="2" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(2)"/></td>
 						</tr>
 						<tr >
-							<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="ML" src="Images/Blank.jpg" onclick="buttonClick('ML')"/></td>
-							<td style="border:solid 1px"><input type="image" id="MM" src="Images/Blank.jpg" onclick="buttonClick('MM')"/></td>
-							<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="MR" src="Images/Blank.jpg" onclick="buttonClick('MR')"/></td>
+							<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="3" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(3)"/></td>
+							<td style="border:solid 1px"><input type="image" id="4" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(4)"/></td>
+							<td style="border-top:solid 1px; border-bottom:solid 1px;"><input type="image" id="5" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(5)"/></td>
 						</tr>
 						<tr>
-							<td><input type="image" id="LL" src="Images/Blank.jpg" onclick="buttonClick('LL')"/></td>
-							<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="LM" src="Images/Blank.jpg" onclick="buttonClick('LM')"/></td>
-							<td><input type="image" id="LR" src="Images/Blank.jpg" onclick="buttonClick('LR')"/></td>
+							<td><input type="image" id="6" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(6)"/></td>
+							<td style="border-right:solid 1px; border-left:solid 1px"><input type="image" id="7" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(7)"/></td>
+							<td><input type="image" id="8" src="Images/Blank.jpg" onclick="DisplayAdapter.makeMove(8)"/></td>
 						</tr>
 					</table>
 				</div>
